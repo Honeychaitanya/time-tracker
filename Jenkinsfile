@@ -14,20 +14,20 @@ pipeline {
         }
         stage('install') {
             steps {
-                bat "mvn install -f time-tracker"
-               // ssh "mvn install -f time-tracker"
+              // bat "mvn install -f time-tracker"
+                ssh "mvn install -f time-tracker"
             }
         }
         stage('test') {
             steps {
-              bat "mvn test -f time-tracker"
-                //ssh "mvn test -f time-tracker"
+             // bat "mvn test -f time-tracker"
+                ssh "mvn test -f time-tracker"
             }
         }
         stage('package') {
             steps {
-                bat "mvn package -f time-tracker"
-              //  ssh "mvn package -f time-tracker"
+               // bat "mvn package -f time-tracker"
+               ssh "mvn package -f time-tracker"
                 
             }
         }
